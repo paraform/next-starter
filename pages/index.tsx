@@ -7,6 +7,7 @@ import { styled } from "stitches.config";
 const ColorSwatch = styled("div", {
   size: "$8",
   radius: "$round",
+  shadow: "$4",
 });
 
 const Flex = styled("div", {
