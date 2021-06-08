@@ -1,5 +1,5 @@
 import { createCss, StitchesCss } from "@stitches/react";
-import { dark, light } from "styles/palette";
+import { dark, light } from "@/styles/palette";
 
 export const stitchesConfig = createCss({
   prefix: "",
@@ -140,8 +140,15 @@ export const stitchesConfig = createCss({
   },
 });
 
-export const { styled, css, global, keyframes, getCssString, config, theme } =
-  stitchesConfig;
+export const {
+  styled,
+  css,
+  global,
+  keyframes,
+  getCssString,
+  config,
+  theme,
+} = stitchesConfig;
 
 export type CSS = StitchesCss<typeof stitchesConfig>;
 export type { StitchesVariants } from "@stitches/react";

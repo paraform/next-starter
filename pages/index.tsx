@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useTheme } from "next-themes";
 
 import { styled } from "stitches.config";
+import { Button } from "@/components";
 
 const ColorSwatch = styled("div", {
   size: "$8",
@@ -76,6 +77,9 @@ export default function Home() {
         <ColorSwatch css={{ background: "$danger" }} />
         <ColorSwatch css={{ background: "$disabled" }} />
       </Flex>
+      <br />
+      <br />
+      <Button>Click Me</Button>
     </div>
   );
 }
