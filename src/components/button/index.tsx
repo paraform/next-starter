@@ -27,6 +27,10 @@ export const Button = styled("button", {
     backgroundColor: "$grey300",
     color: "$grey500",
     pointerEvents: "none",
+    [`.${darkTheme} &`]: {
+      backgroundColor: "$purple800",
+      color: "$purple600",
+    },
   },
   //varaints
   variants: {
@@ -60,9 +64,6 @@ export const Button = styled("button", {
         },
         "&:active": {
           background: "$$bold3",
-        },
-        [`.${darkTheme} &`]: {
-          color: "$$hiContrast",
         },
       },
       outlined: {
