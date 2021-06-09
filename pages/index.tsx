@@ -62,9 +62,7 @@ export default function Home() {
         data-testid="themeSwitch"
         onClick={toggleTheme}
       >
-        <a>
-          {theme === "light" ? "Switch To Dark Mode" : "Switch To Light Mode"}
-        </a>
+        {theme === "light" ? "Switch To Dark Mode" : "Switch To Light Mode"}
       </ThemeSwitchContainer>
       <br />
       <br />
