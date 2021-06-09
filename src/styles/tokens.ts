@@ -8,8 +8,6 @@
 // $$soft2: "",
 // $$soft3: "",
 
-import { darkTheme } from "stitches.config";
-
 export const primary = {
   $$hiContrast: "$colors$purple900",
   $$loContrast: "white",
@@ -19,16 +17,6 @@ export const primary = {
   $$soft: "$colors$purple100",
   $$soft2: "$colors$purple200",
   $$soft3: "$colors$purple300",
-  [`.${darkTheme} &`]: {
-    $hiContrast: "white",
-    $$loContrast: "$colors$purple900",
-    $$bold: "$colors$purple300",
-    $$bold2: "$colors$purple200",
-    $$bold3: "$colors$purple100",
-    $$soft: "$colors$purple800",
-    $$soft2: "$colors$purple700",
-    $$soft3: "$colors$purple600",
-  },
 };
 
 export const neutral = {
@@ -40,11 +28,6 @@ export const neutral = {
   $$soft: "$colors$grey100",
   $$soft2: "$colors$grey200",
   $$soft3: "$colors$grey300",
-  [`.${darkTheme} &`]: {
-    $$soft: "$colors$grey800",
-    $$soft2: "$colors$grey700",
-    $$soft3: "$colors$grey600",
-  },
 };
 
 export const success = {

@@ -50,10 +50,29 @@ export const Button = styled("button", {
       },
     },
     colorway: {
-      primary: primary,
-      neutral: neutral,
-      success: success,
-      danger: danger,
+      primary: {
+        ...primary,
+        [`.${darkTheme} &`]: {
+          $hiContrast: "white",
+          $$loContrast: "$colors$purple900",
+          $$bold: "$colors$purple300",
+          $$bold2: "$colors$purple200",
+          $$bold3: "$colors$purple100",
+          $$soft: "$colors$purple800",
+          $$soft2: "$colors$purple700",
+          $$soft3: "$colors$purple600",
+        },
+      },
+      neutral: {
+        ...neutral,
+        [`.${darkTheme} &`]: {
+          $$soft: "$colors$grey800",
+          $$soft2: "$colors$grey700",
+          $$soft3: "$colors$grey600",
+        },
+      },
+      success: { ...success },
+      danger: { ...danger },
     },
     type: {
       solid: {
