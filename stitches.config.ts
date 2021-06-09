@@ -5,9 +5,25 @@ export const stitchesConfig = createCss({
   prefix: "",
   theme: {
     colors: light,
-    fonts: {},
-    fontSizes: {},
-    fontWeights: {},
+    fonts: {
+      base: '"Inter", apple-system, sans-serif',
+      heading: "inherit",
+    },
+    fontSizes: {
+      1: "12px",
+      2: "14px",
+      3: "16px",
+      4: "18px",
+      5: "20px",
+      6: "22px",
+      7: "28px",
+      8: "34px",
+      9: "48px",
+    },
+    fontWeights: {
+      normal: "400",
+      bold: "700",
+    },
     lineHeights: {},
     letterSpacings: {},
     space: {
@@ -34,8 +50,9 @@ export const stitchesConfig = createCss({
       8: "64px",
       9: "80px",
     },
-    borderWidths: {},
-    borderStyles: {},
+    borderWidths: {
+      1: "1px",
+    },
     radii: {
       1: "4px",
       2: "6px",
@@ -53,6 +70,7 @@ export const stitchesConfig = createCss({
       5: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       6: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
       inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
+      outline: "0 0 0 3px rgba(66, 153, 225, 0.6)",
     },
     zIndices: {
       1: "100",
@@ -160,9 +178,32 @@ export const darkTheme = theme("dark-theme", {
 });
 
 export const globalStyles = global({
+  "@font-face": [
+    {
+      fontFamily: "Inter",
+      fontStyle: "normal",
+      fontWeight: "400",
+      fontDisplay: "swap",
+      src: 'url(/fonts/Inter_Regular.ttf) format("ttf")',
+    },
+    {
+      fontFamily: "Inter",
+      fontStyle: "normal",
+      fontWeight: "600",
+      fontDisplay: "swap",
+      src: 'url(/fonts/Inter_SemiBold.ttf) format("ttf")',
+    },
+  ],
+  "::selection": {
+    backgroundColor: "$foreground",
+    color: "$background",
+  },
   "html, body": {
-    background: "$loContrast",
-    color: "$hiContrast",
+    background: "$background",
+    color: "$foreground",
+    fontFamily: "$base",
+    fontWeight: "$normal",
+    m: 0,
   },
   a: {
     color: "$accent",

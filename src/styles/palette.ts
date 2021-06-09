@@ -41,25 +41,15 @@ export const colors = {
 
 export const light = {
   ...colors,
-  hiContrast: "$purple900",
-  loContrast: "$white",
-  primary: "$purple400",
-  primaryHover: "$purple500",
-  accent: "$purple600",
-  neutral: "$grey600",
-  success: "$green600",
-  danger: "$red500",
-  disabled: "$grey400",
+  //semantic colors
+  foreground: "$purple900",
+  background: "$white",
+  accent: "$purple500",
 };
 
 export const dark = {
-  hiContrast: "$white",
-  loContrast: "$purple900",
-  primary: "$purple600",
-  primaryHover: "$purple500",
-  accent: "$purple400",
-  neutral: "$grey400",
-  success: "$green600",
-  danger: "$red500",
-  disabled: "$grey600",
+  //semantic colors
+  foreground: "$white",
+  background: "$purple900",
+  accent: "$purple500",
 };
