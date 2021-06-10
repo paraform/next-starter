@@ -1,3 +1,5 @@
+import { darkTheme } from "stitches.config";
+
 // Component specific tokens
 // $$hiContrast: "",
 // $$loContrast: "",
@@ -17,17 +19,37 @@ export const primary = {
   $$soft: "$colors$purple100",
   $$soft2: "$colors$purple200",
   $$soft3: "$colors$purple300",
+  //dark theme
+  [`.${darkTheme} &`]: {
+    $hiContrast: "white",
+    $$loContrast: "$colors$purple900",
+    $$bold: "$colors$purple300",
+    $$bold2: "$colors$purple200",
+    $$bold3: "$colors$purple100",
+    $$soft: "$colors$purple800",
+    $$soft2: "$colors$purple700",
+    $$soft3: "$colors$purple600",
+  },
 };
 
 export const neutral = {
   $$hiContrast: "white",
   $$loContrast: "$colors$grey900",
-  $$bold: "$colors$grey500",
-  $$bold2: "$colors$grey600",
-  $$bold3: "$colors$grey700",
+  $$bold: "$colors$grey700",
+  $$bold2: "$colors$grey800",
+  $$bold3: "$colors$grey900",
   $$soft: "$colors$grey100",
   $$soft2: "$colors$grey200",
   $$soft3: "$colors$grey300",
+  //dark theme
+  [`.${darkTheme} &`]: {
+    $$bold: "$colors$grey500",
+    $$bold2: "$colors$grey600",
+    $$bold3: "$colors$grey700",
+    $$soft: "$colors$grey800",
+    $$soft2: "$colors$grey700",
+    $$soft3: "$colors$grey600",
+  },
 };
 
 export const success = {
@@ -39,6 +61,12 @@ export const success = {
   $$soft: "$colors$green100",
   $$soft2: "$colors$green200",
   $$soft3: "$colors$green300",
+  //dark theme
+  [`.${darkTheme} &`]: {
+    $$soft: "$colors$green900",
+    $$soft2: "$colors$green800",
+    $$soft3: "$colors$green700",
+  },
 };
 
 export const danger = {
@@ -50,4 +78,16 @@ export const danger = {
   $$soft: "$colors$red100",
   $$soft2: "$colors$red200",
   $$soft3: "$colors$red300",
+  //dark theme
+  [`.${darkTheme} &`]: {},
+};
+
+export const disabled = {
+  $$bold: "$colors$grey500",
+  $$soft: "$colors$grey300",
+  //dark theme
+  [`.${darkTheme} &`]: {
+    $$bold: "$colors$purple600",
+    $$soft: "$colors$purple800",
+  },
 };

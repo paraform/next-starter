@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { useTheme } from "next-themes";
 
-import { styled } from "stitches.config";
+import { darkTheme, styled } from "stitches.config";
 import { Button } from "@/components";
 
 const Box = styled("div", {
@@ -107,8 +107,64 @@ export default function Home() {
       </Flex>
       <br />
       <Flex>
-        <Button disabled>Click Me</Button>
+        <Button disabled>Don't Click Me</Button>
       </Flex>
+      <br />
+      <br />
+      <Box
+        css={{ m: "0", py: "$3", background: "$background" }}
+        className={darkTheme}
+      >
+        <Flex>
+          <Button>Click Me</Button>
+          <Button type="outlined">Click Me</Button>
+          <Button type="ghost">Click Me</Button>
+          <Button type="link">Click Me</Button>
+        </Flex>
+        <br />
+        <Flex>
+          <Button colorway="success">Click Me</Button>
+          <Button colorway="success" type="outlined">
+            Click Me
+          </Button>
+          <Button colorway="success" type="ghost">
+            Click Me
+          </Button>
+          <Button colorway="success" type="link">
+            Click Me
+          </Button>
+        </Flex>
+        <br />
+        <Flex>
+          <Button colorway="danger">Click Me</Button>
+          <Button colorway="danger" type="outlined">
+            Click Me
+          </Button>
+          <Button colorway="danger" type="ghost">
+            Click Me
+          </Button>
+          <Button colorway="danger" type="link">
+            Click Me
+          </Button>
+        </Flex>
+        <br />
+        <Flex>
+          <Button colorway="neutral">Click Me</Button>
+          <Button colorway="neutral" type="outlined">
+            Click Me
+          </Button>
+          <Button colorway="neutral" type="ghost">
+            Click Me
+          </Button>
+          <Button colorway="neutral" type="link">
+            Click Me
+          </Button>
+        </Flex>
+        <br />
+        <Flex>
+          <Button disabled>Don't Click Me</Button>
+        </Flex>
+      </Box>
     </div>
   );
 }

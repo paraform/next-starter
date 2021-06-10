@@ -1,5 +1,5 @@
 import { darkTheme, styled } from "stitches.config";
-import { danger, primary, success, neutral } from "@/styles/tokens";
+import { danger, primary, success, neutral, disabled } from "@/styles/tokens";
 
 export const Button = styled("button", {
   // mini reset
@@ -16,6 +16,7 @@ export const Button = styled("button", {
   // custom
   borderRadius: "$2",
   px: "$3",
+  // states
   "&:hover": {
     cursor: "pointer",
   },
@@ -24,13 +25,10 @@ export const Button = styled("button", {
     transition: "box-shadow 0.2s",
   },
   "&:disabled": {
-    backgroundColor: "$grey300",
-    color: "$grey500",
+    ...disabled,
+    backgroundColor: "$$soft",
+    color: "$$bold",
     pointerEvents: "none",
-    [`.${darkTheme} &`]: {
-      backgroundColor: "$purple800",
-      color: "$purple600",
-    },
   },
   //varaints
   variants: {
@@ -50,29 +48,10 @@ export const Button = styled("button", {
       },
     },
     colorway: {
-      primary: {
-        ...primary,
-        [`.${darkTheme} &`]: {
-          $hiContrast: "white",
-          $$loContrast: "$colors$purple900",
-          $$bold: "$colors$purple300",
-          $$bold2: "$colors$purple200",
-          $$bold3: "$colors$purple100",
-          $$soft: "$colors$purple800",
-          $$soft2: "$colors$purple700",
-          $$soft3: "$colors$purple600",
-        },
-      },
-      neutral: {
-        ...neutral,
-        [`.${darkTheme} &`]: {
-          $$soft: "$colors$grey800",
-          $$soft2: "$colors$grey700",
-          $$soft3: "$colors$grey600",
-        },
-      },
-      success: { ...success },
-      danger: { ...danger },
+      primary: primary,
+      neutral: neutral,
+      success: success,
+      danger: danger,
     },
     type: {
       solid: {
