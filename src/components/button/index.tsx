@@ -1,8 +1,13 @@
-import { darkTheme, styled } from "stitches.config";
+import React from "react";
+import { styled, CSS, StitchesVariants } from "stitches.config";
 import { danger, primary, success, neutral, disabled } from "@/styles/tokens";
 
-export const Button = styled("button", {
-  // mini reset
+import type * as Polymorphic from "@radix-ui/react-polymorphic";
+
+const DEFAULT_TAG = "button";
+
+export const StyledButton = styled(DEFAULT_TAG, {
+  // Reset
   all: "unset",
   alignItems: "center",
   boxSizing: "border-box",
@@ -13,7 +18,15 @@ export const Button = styled("button", {
   "&::after": {
     boxSizing: "border-box",
   },
-  // custom
+
+  // Custom reset?
+  display: "inline-flex",
+  flexShrink: 0,
+  justifyContent: "center",
+  lineHeight: "1",
+  WebkitTapHighlightColor: "rgba(0,0,0,0)",
+
+  // Custom
   borderRadius: "$2",
   px: "$3",
   // states
@@ -30,7 +43,8 @@ export const Button = styled("button", {
     color: "$$bold",
     pointerEvents: "none",
   },
-  //varaints
+
+  //Varaints
   variants: {
     size: {
       1: {
@@ -95,8 +109,8 @@ export const Button = styled("button", {
         fontWeight: "$bold",
         color: "$$bold",
         background: "transparent",
-        px: "0",
         height: "auto",
+        px: "0",
         "&:hover": {
           color: "$$bold2",
           textDecoration: "underline",
@@ -114,3 +128,19 @@ export const Button = styled("button", {
     size: "2",
   },
 });
+
+type ButtonCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type ButtonVariants = Omit<StitchesVariants<typeof StyledButton>, "size">;
+type ButtonOwnProps = ButtonCSSProp & ButtonVariants & { size?: any };
+
+type ButtonComponent = Polymorphic.ForwardRefComponent<
+  typeof DEFAULT_TAG,
+  ButtonOwnProps
+>;
+
+export const Button = React.forwardRef((props, forwardedRef) => {
+  return <StyledButton {...props} ref={forwardedRef} />;
+}) as ButtonComponent;
+
+Button.toString = () => `.${StyledButton.className}`;
