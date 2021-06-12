@@ -12,12 +12,12 @@ const Box = styled("div", {
 const Flex = styled("div", {
   display: "inline-flex",
   flexWrap: "wrap",
-  "& > button": { margin: "$2" },
+  "& > button": { margin: "$half" },
 });
 
 export const ThemeSwitchContainer = styled("a", {
   backgroundColor: "transparent",
-  padding: "$0",
+  padding: "0",
   "&:hover": {
     cursor: "pointer",
     textDecoration: "underline",

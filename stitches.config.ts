@@ -27,16 +27,16 @@ export const stitchesConfig = createCss({
     lineHeights: {},
     letterSpacings: {},
     space: {
-      0: "0px",
-      1: "4px",
-      2: "8px",
-      3: "16px",
-      4: "20px",
-      5: "24px",
-      6: "32px",
-      7: "48px",
-      8: "64px",
-      9: "80px",
+      half: "calc($base / 2)",
+      base: "4px",
+      2: "calc($base * 2)",
+      3: "calc($base * 3)",
+      4: "calc($base * 4)",
+      6: "calc($base * 6)",
+      8: "calc($base * 8)",
+      10: "calc($base * 10)",
+      12: "calc($base * 12)",
+      16: "calc($base * 16)",
     },
     sizes: {
       0: "0px",
@@ -161,7 +161,7 @@ export const stitchesConfig = createCss({
 export const {
   styled,
   css,
-  global,
+  global: stitchesGlobal,
   keyframes,
   getCssString,
   config,
@@ -177,7 +177,7 @@ export const darkTheme = theme("dark-theme", {
   colors: dark,
 });
 
-export const globalStyles = global({
+export const globalStyles = stitchesGlobal({
   "@font-face": [
     {
       fontFamily: "Inter",
