@@ -16,7 +16,7 @@ export default {
   title: "Theme/Spacing",
 };
 
-export const Component = () => (
+export const Overview = () => (
   <Stack direction="column" css={{ stackGap: "$2x" }}>
     {Object.keys(spacing).map((space, key) => (
       <Stack
@@ -32,6 +32,3 @@ export const Component = () => (
     ))}
   </Stack>
 );
-
-Component.args = {};
-Component.argTypes = {};
