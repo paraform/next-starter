@@ -1,8 +1,9 @@
 import { createCss, StitchesCss } from "@stitches/react";
 import { dark, light } from "@/styles/palette";
+import { spacing } from "@/styles/theme/spacing";
 
 export const stitchesConfig = createCss({
-  prefix: "",
+  prefix: "sx",
   theme: {
     colors: light,
     fonts: {
@@ -27,16 +28,7 @@ export const stitchesConfig = createCss({
     lineHeights: {},
     letterSpacings: {},
     space: {
-      half: "calc($base / 2)",
-      base: "4px",
-      2: "calc($base * 2)",
-      3: "calc($base * 3)",
-      4: "calc($base * 4)",
-      6: "calc($base * 6)",
-      8: "calc($base * 8)",
-      10: "calc($base * 10)",
-      12: "calc($base * 12)",
-      16: "calc($base * 16)",
+      ...spacing,
     },
     sizes: {
       0: "0px",
@@ -154,6 +146,13 @@ export const stitchesConfig = createCss({
 
     linearGradient: (config) => (value: any) => ({
       backgroundImage: `linear-gradient(${value})`,
+    }),
+
+    // Component
+    stackGap: <T extends { theme: { space: any } }>(_: T) => (
+      value: `$${Extract<keyof T["theme"]["space"], string | number>}`
+    ) => ({
+      $$gap: `$space${value}`,
     }),
   },
 });
