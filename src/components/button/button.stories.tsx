@@ -4,7 +4,7 @@ import { styled } from "stitches.config";
 const Flex = styled("div", {
   display: "inline-flex",
   flexWrap: "wrap",
-  "& > button": { margin: "$2" },
+  "& > button": { margin: "$2x" },
 });
 
 export default {

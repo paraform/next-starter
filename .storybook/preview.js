@@ -1,4 +1,4 @@
-import { globalStyles } from "../stitches.config";
+import { globalStyles } from "../src/styles/global";
 
 globalStyles();
 
