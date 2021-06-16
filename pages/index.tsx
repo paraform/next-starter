@@ -10,6 +10,10 @@ const Box = styled("div", {
   margin: "$2x",
 });
 
+const Heading = styled("h1", {
+  pl: "$2x",
+});
+
 export const ThemeSwitchContainer = styled("a", {
   backgroundColor: "transparent",
   padding: "0",
@@ -43,16 +47,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
-        <h1>Colors</h1>
+        <Heading>Colors</Heading>
         <br />
         <ThemeSwitchContainer
           type="button"
           data-testid="themeSwitch"
           onClick={toggleTheme}
+          css={{ pl: "$3x" }}
         >
           {theme === "light" ? "Switch To Dark Mode" : "Switch To Light Mode"}
         </ThemeSwitchContainer>
-        <Box css={{ m: "0", py: "$3x", background: "$background" }}>
+        <br />
+        <br />
+        <Box css={{ m: "0", p: "$3x", background: "$background" }}>
           <Stack direction="column" css={{ stackGap: "$2x" }}>
             <Stack css={{ stackGap: "$2x" }}>
               <Button>Click Me</Button>
@@ -101,8 +108,9 @@ export default function Home() {
             </Stack>
           </Stack>
         </Box>
+        <br />
         <Box
-          css={{ m: "0", py: "$3x", background: "$background" }}
+          css={{ m: "0", p: "$3x", background: "$background" }}
           className={theme === "light-theme" ? "dark-theme" : "light-theme"}
         >
           <Stack direction="column" css={{ stackGap: "$2x" }}>

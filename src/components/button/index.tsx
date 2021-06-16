@@ -28,7 +28,7 @@ export const StyledButton = styled(DEFAULT_TAG, {
 
   // Custom
   borderRadius: "$2",
-  px: "$3",
+  px: "$3x",
   // states
   "&:hover": {
     cursor: "pointer",
@@ -50,7 +50,7 @@ export const StyledButton = styled(DEFAULT_TAG, {
       1: {
         fontSize: "12px",
         height: "$4",
-        px: "$2",
+        px: "$2x",
       },
       2: {
         fontSize: "14px",
