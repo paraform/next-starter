@@ -1,5 +1,3 @@
-const path = require("path");
-const toPath = (_path) => path.join(process.cwd(), _path);
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
@@ -14,13 +12,8 @@ module.exports = {
     },
     "storybook-addon-themes",
   ],
-  webpackFinal: async (config, { configType }) => {
-    config.resolve.plugins = [
-      new TsconfigPathsPlugin({
-        configFile: path.resolve(__dirname, "../tsconfig.json"),
-      }),
-    ];
-
+  webpackFinal: async (config) => {
+    config.resolve.plugins = [new TsconfigPathsPlugin()];
     return config;
   },
 };

@@ -1,4 +1,5 @@
 import { globalStyles } from "../src/styles/global";
+import { darkTheme, theme as lightTheme } from "../stitches.config";
 
 globalStyles();
 
@@ -7,9 +8,10 @@ export const parameters = {
   layout: "centered",
   themes: {
     default: "light",
+    target: "html",
     list: [
-      { name: "light", class: "light-theme", color: "#fff" },
-      { name: "dark", class: "dark-theme", color: "#000" },
+      { name: "light", class: lightTheme.toString(), color: "#fff" },
+      { name: "dark", class: darkTheme.toString(), color: "#000" },
     ],
   },
   controls: {
