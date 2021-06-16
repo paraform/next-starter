@@ -176,35 +176,4 @@ export const darkTheme = theme("dark-theme", {
   colors: dark,
 });
 
-export const globalStyles = stitchesGlobal({
-  "@font-face": [
-    {
-      fontFamily: "Inter",
-      fontStyle: "normal",
-      fontWeight: "400",
-      fontDisplay: "swap",
-      src: 'url(/fonts/Inter_Regular.ttf) format("ttf")',
-    },
-    {
-      fontFamily: "Inter",
-      fontStyle: "normal",
-      fontWeight: "600",
-      fontDisplay: "swap",
-      src: 'url(/fonts/Inter_SemiBold.ttf) format("ttf")',
-    },
-  ],
-  "::selection": {
-    backgroundColor: "$foreground",
-    color: "$background",
-  },
-  "html, body": {
-    background: "$background",
-    color: "$foreground",
-    fontFamily: "$base",
-    fontWeight: "$normal",
-    m: 0,
-  },
-  a: {
-    color: "$accent",
-  },
-});
+export { globalStyles } from "@/styles/global";
