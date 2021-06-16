@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider
       attribute="class"
-      value={{ light: "light-theme", dark: darkTheme.className }}
+      value={{ light: "light", dark: darkTheme.className }}
       defaultTheme="system"
     >
       <Component {...pageProps} />

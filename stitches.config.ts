@@ -172,6 +172,6 @@ export type { StitchesVariants } from "@stitches/react";
 
 export const utils = config.utils;
 
-export const darkTheme = theme("dark-theme", {
+export const darkTheme = theme("dark", {
   colors: dark,
 });

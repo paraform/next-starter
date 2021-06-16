@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { useTheme } from "next-themes";
 
-import { styled } from "stitches.config";
+import { theme as lightTheme, darkTheme, styled } from "stitches.config";
 import { Button } from "@/components";
 import { Stack } from "@/components/stack";
 
@@ -10,32 +10,20 @@ const Box = styled("div", {
   margin: "$2x",
 });
 
-const Heading = styled("h1", {
-  pl: "$2x",
+const Select = styled("select", {
+  margin: "$2x",
 });
 
-export const ThemeSwitchContainer = styled("a", {
-  backgroundColor: "transparent",
-  padding: "0",
-  "&:hover": {
-    cursor: "pointer",
-    textDecoration: "underline",
-  },
+const Heading = styled("h1", {
+  color: "$foreground",
+  pl: "$2x",
 });
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-
+  console.log(theme);
   useEffect(() => setMounted(true), []);
-
-  const toggleTheme = () => {
-    if (theme === "dark-theme") {
-      setTheme("light-theme");
-    } else {
-      setTheme("dark-theme");
-    }
-  };
 
   if (!mounted) return null;
   console.log(theme);
@@ -49,14 +37,13 @@ export default function Home() {
       <Box>
         <Heading>Colors</Heading>
         <br />
-        <ThemeSwitchContainer
-          type="button"
-          data-testid="themeSwitch"
-          onClick={toggleTheme}
-          css={{ pl: "$3x" }}
-        >
-          {theme === "light" ? "Switch To Dark Mode" : "Switch To Light Mode"}
-        </ThemeSwitchContainer>
+        {theme !== undefined && (
+          <Select value={theme} onChange={(e) => setTheme(e.target.value)}>
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="system">System</option>
+          </Select>
+        )}
         <br />
         <br />
         <Box css={{ m: "0", p: "$3x", background: "$background" }}>
@@ -111,8 +98,9 @@ export default function Home() {
         <br />
         <Box
           css={{ m: "0", p: "$3x", background: "$background" }}
-          className={theme === "light-theme" ? "dark-theme" : "light-theme"}
+          className={theme === "light" ? darkTheme : lightTheme.toString()}
         >
+          <Heading as="h2">I'm should be visible</Heading>
           <Stack direction="column" css={{ stackGap: "$2x" }}>
             <Stack css={{ stackGap: "$2x" }}>
               <Button>Click Me</Button>

@@ -1,6 +1,6 @@
 import React from "react";
 import { styled, CSS, StitchesVariants } from "stitches.config";
-import { danger, primary, success, neutral, disabled } from "@/styles/tokens";
+import { colorway } from "@/utils/tokens";
 
 import type * as Polymorphic from "@radix-ui/react-polymorphic";
 
@@ -38,7 +38,8 @@ export const StyledButton = styled(DEFAULT_TAG, {
     transition: "box-shadow 0.2s",
   },
   "&:disabled": {
-    ...disabled,
+    $$bold: "$colors$disabledBold",
+    $$soft: "$colors$disabledSoft",
     backgroundColor: "$$soft",
     color: "$$bold",
     pointerEvents: "none",
@@ -62,10 +63,10 @@ export const StyledButton = styled(DEFAULT_TAG, {
       },
     },
     colorway: {
-      primary: primary,
-      neutral: neutral,
-      success: success,
-      danger: danger,
+      primary: colorway("primary"),
+      neutral: colorway("neutral"),
+      success: colorway("success"),
+      danger: colorway("danger"),
     },
     type: {
       solid: {
