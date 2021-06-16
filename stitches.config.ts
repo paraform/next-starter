@@ -175,5 +175,3 @@ export const utils = config.utils;
 export const darkTheme = theme("dark-theme", {
   colors: dark,
 });
-
-export { globalStyles } from "@/styles/global";
