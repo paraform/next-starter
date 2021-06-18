@@ -111,7 +111,7 @@ export const StyledButton = styled(DEFAULT_TAG, {
         color: "$$bold",
         background: "transparent",
         height: "auto",
-        px: "0",
+        padding: "0",
         "&:hover": {
           color: "$$bold2",
           textDecoration: "underline",
