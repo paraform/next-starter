@@ -10,6 +10,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@radix-ui/react-icons": "^1.0.3",
     "@radix-ui/react-polymorphic": "^0.0.12",
     "@stitches/react": "^0.2.2",
     "next": "11.0.0",
