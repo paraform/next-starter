@@ -1,4 +1,4 @@
-import { globalStyles } from "../src/styles/global";
+import { globalStyles } from "../src/theme/global";
 import { darkTheme, theme as lightTheme } from "../stitches.config";
 
 globalStyles();
@@ -22,7 +22,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ["Theme", "Primatives"],
+      order: ["Theme", ["Colors", "Spacing"], "Primatives", ["Button"]],
     },
   },
 };

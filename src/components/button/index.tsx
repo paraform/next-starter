@@ -1,6 +1,6 @@
 import React from "react";
 import { styled, CSS, StitchesVariants } from "stitches.config";
-import { colorway } from "@/utils/tokens";
+import { colorway } from "@/theme/colorways";
 
 import type * as Polymorphic from "@radix-ui/react-polymorphic";
 

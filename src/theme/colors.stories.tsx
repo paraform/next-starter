@@ -1,6 +1,6 @@
 import { Stack } from "@/components/stack";
 import { styled } from "stitches.config";
-import { colors } from "./colors";
+import { light } from "./colorways";
 
 const ColorDisplay = styled("div", {
   size: "60px",
@@ -17,9 +17,9 @@ export default {
   title: "Theme/Colors",
 };
 
-export const Overview = () => (
+export const Tokens = () => (
   <Stack direction="row" css={{ stackGap: "$3x", flexWrap: "wrap" }}>
-    {Object.keys(colors).map((color, key) => (
+    {Object.keys(light).map((color, key) => (
       <Stack
         direction="column"
         css={{

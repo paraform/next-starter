@@ -1441,10 +1441,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@stitches/react@^0.2.0":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.2.1.tgz#c63a0a337b849b302da2342cb5d7aeb6ea257913"
-  integrity sha512-LPCOUXsadQM4JrtHQEsOJ+msyss0KySO9jL8L2SUVi9Vi6BfbyEi1mVGaqgvIQRZQfWsM0Se/3AXcl9rUQi5Nw==
+"@stitches/react@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.2.2.tgz#8a2f8256835510c265ab20820f54a5bb0376bac6"
+  integrity sha512-/qRSX+ANPJg/0eLNr5bEywjkdvIfLbsaG2d8p83wPlI0MA7Yi9FzaRLk2H6DMAdJHuyu6ThY4HfHQIL35buY9g==
 
 "@storybook/addon-actions@6.2.9", "@storybook/addon-actions@^6.2.9":
   version "6.2.9"

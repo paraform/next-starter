@@ -1,11 +1,12 @@
 import { createCss, StitchesCss } from "@stitches/react";
-import { dark, light } from "@/styles/palette";
-import { spacing } from "@/styles/theme/spacing";
+import { colors } from "@/theme/colors";
+import { dark, light } from "@/theme/colorways";
+import { spacing } from "@/theme/spacing";
 
 export const stitchesConfig = createCss({
   prefix: "sx",
   theme: {
-    colors: light,
+    colors: { ...colors, ...light },
     fonts: {
       base: '"Inter", apple-system, sans-serif',
       heading: "inherit",
@@ -175,3 +176,5 @@ export const utils = config.utils;
 export const darkTheme = theme("dark", {
   colors: dark,
 });
+
+export const themes = ["light", darkTheme];

@@ -17,10 +17,7 @@ export const globalStyles = stitchesGlobal({
       src: 'url(/fonts/Inter_SemiBold.ttf) format("ttf")',
     },
   ],
-  "::selection": {
-    backgroundColor: "$foreground",
-    color: "$background",
-  },
+
   "html, body": {
     background: "$background",
     color: "$foreground",
@@ -28,6 +25,12 @@ export const globalStyles = stitchesGlobal({
     fontWeight: "$normal",
     margin: 0,
   },
+
+  "::selection": {
+    backgroundColor: "$foreground",
+    color: "$background",
+  },
+
   a: {
     color: "$accent",
   },

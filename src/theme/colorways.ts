@@ -1,7 +1,6 @@
-import { colors } from "./theme/colors";
+import { colors } from "./colors";
 
 export const light = {
-  ...colors,
   //semantic colors
   foreground: "$purple900",
   background: "$white",
@@ -92,3 +91,14 @@ export const dark = {
   disabledBold: "$purple600",
   disabledSoft: "$purple800",
 };
+
+export const colorway = (value: any) => ({
+  $$hiContrast: `$colors$${value}HiContrast`,
+  $$loContrast: `$colors$${value}LoContrast`,
+  $$bold: `$colors$${value}Bold`,
+  $$bold2: `$colors$${value}Bold2`,
+  $$bold3: `$colors$${value}Bold3`,
+  $$soft: `$colors$${value}Soft`,
+  $$soft2: `$colors$${value}Soft2`,
+  $$soft3: `$colors$${value}Soft3`,
+});

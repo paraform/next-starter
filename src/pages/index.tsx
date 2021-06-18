@@ -21,12 +21,12 @@ const Heading = styled("h1", {
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
-  console.log(theme);
+  const { theme, setTheme, resolvedTheme } = useTheme();
+
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
-  console.log(theme);
+
   return (
     <div>
       <Head>
@@ -46,8 +46,10 @@ export default function Home() {
         )}
         <br />
         <br />
+
         <Box css={{ m: "0", p: "$3x", background: "$background" }}>
           <Stack direction="column" css={{ stackGap: "$2x" }}>
+            <Heading as="h2">The current theme is: {resolvedTheme}</Heading>
             <Stack css={{ stackGap: "$2x" }}>
               <Button>Click Me</Button>
               <Button type="outlined">Click Me</Button>
@@ -98,10 +100,13 @@ export default function Home() {
         <br />
         <Box
           css={{ m: "0", p: "$3x", background: "$background" }}
-          className={theme === "light" ? darkTheme : lightTheme.toString()}
+          className={
+            resolvedTheme === "light" ? darkTheme : lightTheme.toString()
+          }
         >
-          <Heading as="h2">I'm should be visible</Heading>
           <Stack direction="column" css={{ stackGap: "$2x" }}>
+            <Heading as="h2">I should be reversed</Heading>
+
             <Stack css={{ stackGap: "$2x" }}>
               <Button>Click Me</Button>
               <Button type="outlined">Click Me</Button>
